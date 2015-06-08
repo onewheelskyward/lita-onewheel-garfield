@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/onewheelskyward/lita-garfield.png?branch=master)](https://travis-ci.org/onewheelskyward/lita-garfield)
 [![Coverage Status](https://coveralls.io/repos/onewheelskyward/lita-garfield/badge.png)](https://coveralls.io/r/onewheelskyward/lita-garfield)
+[![Documentation Status](https://readthedocs.org/projects/lita-garfield/badge/?version=latest)](https://readthedocs.org/projects/lita-garfield/?badge=latest)
 
 TODO: Add a description of the plugin.
 
