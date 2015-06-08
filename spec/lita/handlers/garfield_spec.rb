@@ -10,7 +10,8 @@ describe Lita::Handlers::Garfield, lita_handler: true do
   it { is_expected.to route('!garfield 5/5/1998') }
   it { is_expected.to route('!garfield 5-5-1998') }
   it { is_expected.to route('!garfield 1998-5-5') }
-
+  it { is_expected.to route('!garfield prev') }
+  it { is_expected.to route('!garfield next') }
 
   def zero_prefix(dat)
     if dat.to_i < 10

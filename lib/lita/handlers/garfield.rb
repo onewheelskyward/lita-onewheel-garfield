@@ -17,6 +17,10 @@ module Lita
         help: { '!garfield last' => 'Get the last garfield comic.'})
       route(/^!garfield today$/i, :handle_today_garfield,
         help: { '!garfield today' => 'Get today\'s garfield comic.'})
+      route(/^!garfield prev$/i, :handle_prev_garfield,
+        help: { '!garfield prev' => 'Get the previous garfield comic.'})
+      route(/^!garfield next$/i, :handle_next_garfield,
+        help: { '!garfield next' => 'Get next garfield comic.'})
 
       def get_garfield_for_today
         date = Date.today
