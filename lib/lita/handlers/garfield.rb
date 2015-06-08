@@ -12,11 +12,11 @@ module Lita
       route(/^!garfield (\d{1,2})\/(\d{1,2})\/(\d{2,4})$/i, :handle_mdy_garfield,
         help: { '!garfield' => 'Get a garfield for a m-d-y date.'})
       route(/^!garfield first$/i, :handle_first_garfield,
-        help: { '!garfield random' => 'Get the first garfield comic.'})
+        help: { '!garfield first' => 'Get the first garfield comic.'})
       route(/^!garfield last$/i, :handle_today_garfield,
-        help: { '!garfield random' => 'Get the last garfield comic.'})
+        help: { '!garfield last' => 'Get the last garfield comic.'})
       route(/^!garfield today$/i, :handle_today_garfield,
-        help: { '!garfield random' => 'Get today\'s garfield comic.'})
+        help: { '!garfield today' => 'Get today\'s garfield comic.'})
 
       def get_garfield_for_today
         date = Date.today
