@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/onewheelskyward/lita-garfield/badge.png)](https://coveralls.io/r/onewheelskyward/lita-garfield)
 [![Documentation Status](https://readthedocs.org/projects/lita-garfield/badge/?version=latest)](https://readthedocs.org/projects/lita-garfield/?badge=latest)
 
-Display a Garfield™® comic in IRC.
+Display a Garfield™® comic in IRC.  http://www.garfield.com
 
 ## Installation
 
