@@ -24,7 +24,7 @@ gem 'lita-garfield'
 !garfield first - Get the first garfield comic.
 !garfield last - Get the last garfield comic.
 !garfield today - Get today's garfield comic.
-!garfield prev - Get the previous day's comic based on the last one you displayed.*
-!garfield next - Get the next day's comic based on the last on you displayed.*
+!garfield prev - Get the previous day's comic based on the last one you displayed.
+!garfield next - Get the next day's comic based on the last on you displayed.
 
 * Coming soon to a Lita handler near you.

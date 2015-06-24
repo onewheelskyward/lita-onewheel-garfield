@@ -69,12 +69,28 @@ describe Lita::Handlers::Garfield, lita_handler: true do
   end
 
   # Test the saved state of the last comic you requested.
-  it 'will return the first and then the next garfield comic' do
+  it 'will return the first and then the next and then the previous garfield comic' do
     send_message '!garfield first'
     expect(replies.last).to include('https://garfield.com/uploads/strips/1978-06-19.jpg')
     send_message '!garfield next'
     expect(replies.last).to include('https://garfield.com/uploads/strips/1978-06-20.jpg')
     send_message '!garfield prev'
     expect(replies.last).to include('https://garfield.com/uploads/strips/1978-06-19.jpg')
+  end
+
+  it 'will edge case prev and next' do
+    today = Date.today
+
+    first = 'https://garfield.com/uploads/strips/1978-06-19.jpg'
+    last = "https://garfield.com/uploads/strips/#{today.year}-#{zero_prefix today.month}-#{zero_prefix today.day}.jpg"
+
+    send_message '!garfield first'
+    expect(replies.last).to include(first)
+    send_message '!garfield prev'
+    expect(replies.last).to include(first)
+    send_message '!garfield last'
+    expect(replies.last).to include(last)
+    send_message '!garfield next'
+    expect(replies.last).to include(last)
   end
 end

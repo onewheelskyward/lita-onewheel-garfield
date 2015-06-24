@@ -71,12 +71,18 @@ module Lita
 
       def handle_next_garfield(response)
         date = Date.parse redis.get(response.user.name)
-        response.reply get_garfield_for_date(date + 1, response.user.name)
+        unless date == Date.today
+          date += 1
+        end
+        response.reply get_garfield_for_date(date, response.user.name)
       end
 
       def handle_prev_garfield(response)
         date = Date.parse redis.get(response.user.name)
-        response.reply get_garfield_for_date(date - 1, response.user.name)
+        unless date == Date.civil(1978, 6, 19)
+          date -= 1
+        end
+        response.reply get_garfield_for_date(date, response.user.name)
       end
     end
 
