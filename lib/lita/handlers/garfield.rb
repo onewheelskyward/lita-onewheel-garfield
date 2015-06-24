@@ -22,13 +22,14 @@ module Lita
       route(/^!garfield next$/i, :handle_next_garfield,
         help: { '!garfield next' => 'Get next garfield comic.'})
 
-      def get_garfield_for_today
+      def get_garfield_for_today(username)
         date = Date.today
-        get_garfield_for_date(date.month, date.day, date.year)
+        get_garfield_for_date(date, username)
       end
 
-      def get_garfield_for_date(month, day, year)
-        "https://garfield.com/uploads/strips/#{year}-#{zero_prefix month}-#{zero_prefix day}.jpg"
+      def get_garfield_for_date(date, username)
+        redis.set(username, date)
+        "https://garfield.com/uploads/strips/#{date.year}-#{zero_prefix date.month}-#{zero_prefix date.day}.jpg"
       end
 
       def zero_prefix(dat)
@@ -42,27 +43,40 @@ module Lita
       def handle_random_garfield(response)
         # get a random date between 1978-06-19 and now
         date = rand(Date.civil(1978, 6, 19)..Date.today())
-        response.reply get_garfield_for_date(date.month, date.day, date.year)
+        response.reply get_garfield_for_date(date, response.user.name)
       end
 
       def handle_default_garfield(response)
-        response.reply get_garfield_for_today
+        response.reply get_garfield_for_today response.user.name
       end
 
       def handle_first_garfield(response)
-        response.reply get_garfield_for_date(6, 19, 1978)
+        date = Date.civil(1978, 6, 19)
+        response.reply get_garfield_for_date(date, response.user.name)
       end
 
       def handle_today_garfield(response)
-        response.reply get_garfield_for_today
+        response.reply get_garfield_for_today response.user.name
       end
 
       def handle_ymd_garfield(response)
-        response.reply get_garfield_for_date(response.match_data[2], response.match_data[3], response.match_data[1])
+        date = Date.civil(response.match_data[1].to_i, response.match_data[2].to_i, response.match_data[3].to_i)
+        response.reply get_garfield_for_date(date, response.user.name)
       end
 
       def handle_mdy_garfield(response)
-        response.reply get_garfield_for_date(response.match_data[1], response.match_data[2], response.match_data[3])
+        date = Date.civil(response.match_data[3].to_i, response.match_data[1].to_i, response.match_data[2].to_i)
+        response.reply get_garfield_for_date(date, response.user.name)
+      end
+
+      def handle_next_garfield(response)
+        date = Date.parse redis.get(response.user.name)
+        response.reply get_garfield_for_date(date + 1, response.user.name)
+      end
+
+      def handle_prev_garfield(response)
+        date = Date.parse redis.get(response.user.name)
+        response.reply get_garfield_for_date(date - 1, response.user.name)
       end
     end
 

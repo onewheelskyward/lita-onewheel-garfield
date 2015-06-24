@@ -72,7 +72,9 @@ describe Lita::Handlers::Garfield, lita_handler: true do
   it 'will return the first and then the next garfield comic' do
     send_message '!garfield first'
     expect(replies.last).to include('https://garfield.com/uploads/strips/1978-06-19.jpg')
-    # send_message '!garfield next'
-    # expect(replies.last).to include('https://garfield.com/uploads/strips/1978-06-20.jpg')
+    send_message '!garfield next'
+    expect(replies.last).to include('https://garfield.com/uploads/strips/1978-06-20.jpg')
+    send_message '!garfield prev'
+    expect(replies.last).to include('https://garfield.com/uploads/strips/1978-06-19.jpg')
   end
 end
