@@ -1,26 +1,26 @@
 module Lita
   module Handlers
     class Garfield < Handler
-      route(/^!garfield random$/i, :handle_random_garfield,
-        help: { '!garfield random' => 'Get a random garfield comic.'})
-      route(/^!garfield$/i, :handle_default_garfield,
-        help: { '!garfield' => 'Get today\'s garfield, or a random one if you\'ve already seen today\'s.'})
-      route(/^!garfield (\d{1,2})-(\d{1,2})-(\d{2,4})$/i, :handle_mdy_garfield,
-        help: { '!garfield' => 'Get a garfield for a m/d/y date.'})
-      route(/^!garfield (\d{2,4})-(\d{1,2})-(\d{1,2})$/i, :handle_ymd_garfield,
-        help: { '!garfield' => 'Get a garfield for a y-m-d date.'})
-      route(/^!garfield (\d{1,2})\/(\d{1,2})\/(\d{2,4})$/i, :handle_mdy_garfield,
-        help: { '!garfield' => 'Get a garfield for a m-d-y date.'})
-      route(/^!garfield first$/i, :handle_first_garfield,
-        help: { '!garfield first' => 'Get the first garfield comic.'})
-      route(/^!garfield last$/i, :handle_today_garfield,
-        help: { '!garfield last' => 'Get the last garfield comic.'})
-      route(/^!garfield today$/i, :handle_today_garfield,
-        help: { '!garfield today' => 'Get today\'s garfield comic.'})
-      route(/^!garfield prev$/i, :handle_prev_garfield,
-        help: { '!garfield prev' => 'Get the previous garfield comic.'})
-      route(/^!garfield next$/i, :handle_next_garfield,
-        help: { '!garfield next' => 'Get next garfield comic.'})
+      route(/^garfield random$/i, :handle_random_garfield,
+        help: { 'garfield random' => 'Get a random garfield comic.'})
+      route(/^garfield$/i, :handle_default_garfield,
+        help: { 'garfield' => 'Get today\'s garfield, or a random one if you\'ve already seen today\'s.'})
+      route(/^garfield (\d{1,2})-(\d{1,2})-(\d{2,4})$/i, :handle_mdy_garfield,
+        help: { 'garfield' => 'Get a garfield for a m/d/y date.'})
+      route(/^garfield (\d{2,4})-(\d{1,2})-(\d{1,2})$/i, :handle_ymd_garfield,
+        help: { 'garfield' => 'Get a garfield for a y-m-d date.'})
+      route(/^garfield (\d{1,2})\/(\d{1,2})\/(\d{2,4})$/i, :handle_mdy_garfield,
+        help: { 'garfield' => 'Get a garfield for a m-d-y date.'})
+      route(/^garfield first$/i, :handle_first_garfield,
+        help: { 'garfield first' => 'Get the first garfield comic.'})
+      route(/^garfield last$/i, :handle_today_garfield,
+        help: { 'garfield last' => 'Get the last garfield comic.'})
+      route(/^garfield today$/i, :handle_today_garfield,
+        help: { 'garfield today' => 'Get today\'s garfield comic.'})
+      route(/^garfield prev$/i, :handle_prev_garfield,
+        help: { 'garfield prev' => 'Get the previous garfield comic.'})
+      route(/^garfield next$/i, :handle_next_garfield,
+        help: { 'garfield next' => 'Get next garfield comic.'})
 
       def get_garfield_for_today(username)
         date = Date.today
