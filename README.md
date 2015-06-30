@@ -14,26 +14,26 @@ Add lita-garfield to your Lita instance's Gemfile:
 gem 'lita-garfield'
 ```
 
-## Usage
+## Usage, command mode (e.g. directed at bot or using config.robot.alias = '!'
 
-!garfield random - Get a random garfield comic.
+garfield random - Get a random garfield comic.
 
-!garfield - Get today's garfield, or a random one if you've already seen today's.*
+garfield - Get today's garfield, or a random one if you've already seen today's.*
 
-!garfield 1/1/1980 - Get a garfield for a m/d/y date.
+garfield 1/1/1980 - Get a garfield for a m/d/y date.
 
-!garfield 1980-1-1 - Get a garfield for a y-m-d date.
+garfield 1980-1-1 - Get a garfield for a y-m-d date.
 
-!garfield 1-1-1980 - Get a garfield for a m-d-y date.
+garfield 1-1-1980 - Get a garfield for a m-d-y date.
 
-!garfield first - Get the first garfield comic.
+garfield first - Get the first garfield comic.
 
-!garfield last - Get the last garfield comic.
+garfield last - Get the last garfield comic.
 
-!garfield today - Get today's garfield comic.
+garfield today - Get today's garfield comic.
 
-!garfield prev - Get the previous day's comic based on the last one you displayed.
+garfield prev - Get the previous day's comic based on the last one you displayed.
 
-!garfield next - Get the next day's comic based on the last on you displayed.
+garfield next - Get the next day's comic based on the last on you displayed.
 
 \* Coming soon to a Lita handler near you.
