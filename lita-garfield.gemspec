@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'lita-garfield'
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ['Andrew Kreps']
   spec.email         = ['andrew.kreps@gmail.com']
   spec.description   = 'Tosses links to Garfield comics into chat.'
