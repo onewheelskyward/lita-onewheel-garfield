@@ -1,4 +1,4 @@
-# lita-garfield
+# lita-onewheel-garfield
 
 [![Build Status](https://travis-ci.org/onewheelskyward/lita-onewheel-garfield.png?branch=master)](https://travis-ci.org/onewheelskyward/lita-onewheel-garfield)
 [![Coverage Status](https://coveralls.io/repos/onewheelskyward/lita-onewheel-garfield/badge.png)](https://coveralls.io/r/onewheelskyward/lita-onewheel-garfield)
@@ -8,10 +8,10 @@ Display a Garfield™® comic in IRC.  http://www.garfield.com
 
 ## Installation
 
-Add lita-garfield to your Lita instance's Gemfile:
+Add lita-onewheel-garfield to your Lita instance's Gemfile:
 
 ``` ruby
-gem 'lita-garfield'
+gem 'lita-onewheel-garfield'
 ```
 
 ## Usage, command mode (e.g. directed at bot or using config.robot.alias = '!')
