@@ -14,7 +14,7 @@ Add lita-garfield to your Lita instance's Gemfile:
 gem 'lita-garfield'
 ```
 
-## Usage, command mode (e.g. directed at bot or using config.robot.alias = '!'
+## Usage, command mode (e.g. directed at bot or using config.robot.alias = '!')
 
 garfield random - Get a random garfield comic.
 
