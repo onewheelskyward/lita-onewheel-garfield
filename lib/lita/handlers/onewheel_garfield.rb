@@ -1,6 +1,6 @@
 module Lita
   module Handlers
-    class Garfield < Handler
+    class OnewheelGarfield < Handler
       route(/^garfield random$/i, :handle_random_garfield, command: true,
             help: { 'garfield random' => 'Get a random garfield comic.'})
       route(/^garfield$/i, :handle_default_garfield, command: true,
@@ -86,6 +86,6 @@ module Lita
       end
     end
 
-    Lita.register_handler(Garfield)
+    Lita.register_handler(OnewheelGarfield)
   end
 end
