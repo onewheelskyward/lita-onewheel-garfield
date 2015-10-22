@@ -1,11 +1,11 @@
 Gem::Specification.new do |spec|
-  spec.name          = 'lita-garfield'
+  spec.name          = 'lita-onewheel-garfield'
   spec.version       = '0.0.2'
   spec.authors       = ['Andrew Kreps']
   spec.email         = ['andrew.kreps@gmail.com']
   spec.description   = 'Tosses links to Garfield comics into chat.'
   spec.summary       = 'An alternative way to get your comic fix.'
-  spec.homepage      = 'https://github.com/onewheelskyward/lita-garfield'
+  spec.homepage      = 'https://github.com/onewheelskyward/lita-onewheel-garfield'
   spec.license       = 'MIT'
   spec.metadata      = { 'lita_plugin_type' => 'handler' }
 
