@@ -49,7 +49,7 @@ module Lita
 
       def get_garfield_for_date(date, username)
         redis.set(username, date)
-        "https://garfield.com/uploads/strips/#{date.year}-#{zero_prefix date.month}-#{zero_prefix date.day}.jpg"
+        "https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/#{date.year}/#{date.year}-#{zero_prefix date.month}-#{zero_prefix date.day}.gif"
       end
 
       def zero_prefix(dat)
